@@ -1,0 +1,15 @@
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.AssemblyInfoInputs.cache
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.AssemblyInfo.cs
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.csproj.CoreCompileInputs.cache
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.sourcelink.json
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\Møteplanlegger CLI Applikasjon.exe
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\Møteplanlegger CLI Applikasjon.deps.json
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\Møteplanlegger CLI Applikasjon.runtimeconfig.json
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\Møteplanlegger CLI Applikasjon.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\Møteplanlegger CLI Applikasjon.pdb
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\refint\Møteplanlegger CLI Applikasjon.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.pdb
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.genruntimeconfig.cache
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\ref\Møteplanlegger CLI Applikasjon.dll

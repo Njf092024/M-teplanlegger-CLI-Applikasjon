@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Møteplanlegger_CLI_Applikasjon;
+namespace Møteplanlegger_CLI_Applikasjon
 {
     public class Meeting
     {
