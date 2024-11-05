@@ -10,6 +10,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        
+        try
+        {
+            string filePath = "meetings.json";
+            bool exit = false;
+
+            while (!exit)
+            {
+                
+            }
+        }
     }
 }
