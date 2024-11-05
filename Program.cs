@@ -1,4 +1,7 @@
-﻿namespace Møteplanlegger_CLI_Applikasjon;
+﻿using System.Text.Json;
+using Møteplanlegger_CLI_Applikasjon;
+
+namespace Møteplanlegger_CLI_Applikasjon;
 {
     using System;
     using System.Collections.Generic;
@@ -50,5 +53,21 @@ class Program
         }
     }
 
-    
+    static void ScheduleNewMeeting(string filePath)
+    {
+        Console.Clear();
+
+        List<Meeting> meetings = new List<Meeting>();
+
+        if (File.Exists(filePath))
+        {
+            string? existingJSON = File.ReadAllText(filePath);
+            if (!string.IsNullOrWhiteSpace(existingJSON))
+            {
+                meetings = JsonSerializer.Deserialize<List<Meeting>>(existingJSON) ?? new List<Meeting>();
+            }
+        }
+
+
+    }
 }
