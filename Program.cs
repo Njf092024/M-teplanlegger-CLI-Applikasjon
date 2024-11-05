@@ -86,5 +86,13 @@ class Program
             DateTime = dateTime,
         };
 
+        meetings.Add(newMeeting);
+
+        string json = JsonSerializer.Serialize(meetings, new JsonSerializerOptions { WriteIndented = true});
+        File.WriteAllText(filePath, json);
+
+        Console.WriteLine("Meeting succesfully scheduled and saved!");
+        Console.WriteLine("Press any key to return to main menu...");
+        Console.ReadKey();
     }
 }
