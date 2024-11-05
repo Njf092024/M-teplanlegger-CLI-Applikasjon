@@ -68,6 +68,17 @@ class Program
             }
         }
 
+        Console.WriteLine("Enter the names of participants, seperated by commas:");
+        string? input = Console.ReadLine();
+        List<string> participants = new List<string>(input?.Split(',') ?? Array.Empty<string>());
 
+        Console.WriteLine("Enter the meeting time (yyyy-MM-dd HH:mm):");
+        string? dateTimeInput = Console.ReadLine();
+        DateTime dateTime;
+        while (!DateTime.TryParse(dateTimeInput, out dateTime))
+        {
+            Console.WriteLine("Incorrect date. Please try again (yyyy-MM-dd HH:mm):");
+            dateTimeInput = Console.ReadLine();
+        }
     }
 }
