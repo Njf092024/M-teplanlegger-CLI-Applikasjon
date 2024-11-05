@@ -95,4 +95,42 @@ class Program
         Console.WriteLine("Press any key to return to main menu...");
         Console.ReadKey();
     }
+
+    static void ListAllMeetings(string filePath)
+    {
+        Console.Clear();
+
+        if (File.Exists(filePath))
+        {
+            string? existingJSON = File.ReadAllText(filePath);
+            if (!string.IsNullOrWhiteSpace(existingJSON))
+            {
+                List<Meeting> meetings = JsonSerializer.Deserialize<List<<Meeting>>(existingJSON) ?? new List<Meeting>();
+
+                if (meetings.Count == 0)
+                {
+                    Console.WriteLine("No meetings found in file, that's depressing.");
+                }
+                else
+                {
+                    Console.WriteLine("List of scheduled meetings:");
+                    foreach (var meeting in meetings)
+                    {
+                        Console.WriteLine($"Date and Time: [meeting.DateTime], Participants: {string.Join", ", meeting.Participants)]");
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("No meetings found, yikes.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("File not found.");
+        }
+
+        Console.WriteLine("Press any key to return to the main menu...");
+        Console.ReadKey();
+    }
 }
