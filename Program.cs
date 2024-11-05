@@ -17,7 +17,27 @@ class Program
 
             while (!exit)
             {
-                
+                Console.Clear();
+                Console.WriteLine("Main menu");
+                Console.WriteLine("1. Schedule a new meeting");
+                Console.WriteLine("2. List all meetings");
+                Console.WriteLine("3. Exit");
+                Console.Write("Choose an option: ");
+
+                switch (Console.ReadLine())
+                {
+                    case "1":
+                    ScheduleNewMeeting(filePath);
+                    break;
+                    case "2":
+                    ListAllMeetings(filePath);
+                    break;
+                    case "3":
+                    exit = true;
+                    Console.WriteLine("Nope. Press any key to try again.");
+                    Console.ReadKey();
+                    break;
+                }
             }
         }
     }
