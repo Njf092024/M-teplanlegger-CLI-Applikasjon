@@ -80,5 +80,11 @@ class Program
             Console.WriteLine("Incorrect date. Please try again (yyyy-MM-dd HH:mm):");
             dateTimeInput = Console.ReadLine();
         }
+
+        var newMeeting = new Meeting{
+            Participants = participants,
+            DateTime = dateTime,
+        };
+
     }
 }
