@@ -40,5 +40,13 @@ class Program
                 }
             }
         }
+        catch (IOException exception)
+        {
+            Console.WriteLine($"An error occured while attempting to write to the file meetings.json: {exception.Message}");
+        }
+        catch (Exception exception)
+        {
+            Console.WriteLine($"exception.Message\n");
+        }
     }
 }
