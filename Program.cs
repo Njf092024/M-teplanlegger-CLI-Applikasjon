@@ -33,6 +33,7 @@ class Program
                     ListAllMeetings(filePath);
                     break;
                     case "3":
+                    Console.Clear();
                     exit = true;
                     break;
                 }
