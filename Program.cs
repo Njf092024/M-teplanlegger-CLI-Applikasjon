@@ -19,13 +19,13 @@ class Program
             while (!exit)
             {
                 Clear();
-                Console.WriteLine("Main menu");
-                Console.WriteLine("1. Schedule a new meeting");
-                Console.WriteLine("2. List all meetings");
-                Console.WriteLine("3. Exit");
-                Console.Write("Choose an option: ");
+                WriteLine("Main menu");
+                WriteLine("1. Schedule a new meeting");
+                WriteLine("2. List all meetings");
+                WriteLine("3. Exit");
+                Write("Choose an option: ");
 
-                switch (Console.ReadLine())
+                switch (ReadLine())
                 {
                     case "1":
                     ScheduleNewMeeting(filePath);
@@ -34,7 +34,7 @@ class Program
                     ListAllMeetings(filePath);
                     break;
                     case "3":
-                    Console.Clear();
+                    Clear();
                     exit = true;
                     break;
                 }
@@ -42,11 +42,11 @@ class Program
         }
         catch (IOException exception)
         {
-            Console.WriteLine($"An error occured while attempting to write to the file meetings.json: {exception.Message}");
+            WriteLine($"An error occured while attempting to write to the file meetings.json: {exception.Message}");
         }
         catch (Exception exception)
         {
-            Console.WriteLine($" An error occured: {exception.Message}\n");
+            WriteLine($" An error occured: {exception.Message}\n");
         }
     }
 
@@ -65,17 +65,17 @@ class Program
             }
         }
 
-        Console.WriteLine("Enter the names of participants, seperated by commas:");
-        string? input = Console.ReadLine();
+        WriteLine("Enter the names of participants, seperated by commas:");
+        string? input = ReadLine();
         List<string> participants = new List<string>(input?.Split(',') ?? Array.Empty<string>());
 
-        Console.WriteLine("Enter the meeting time (MM-dd):");
-        string? dateTimeInput = Console.ReadLine();
+        WriteLine("Enter the meeting time (MM-dd):");
+        string? dateTimeInput = ReadLine();
         DateTime dateTime;
         while (!DateTime.TryParse(dateTimeInput + " " +DateTime.Now.Year, out dateTime))
         {
-            Console.WriteLine("Incorrect date. Please try again (MM-dd):");
-            dateTimeInput = Console.ReadLine();
+            WriteLine("Incorrect date. Please try again (MM-dd):");
+            dateTimeInput = ReadLine();
         }
 
         dateTime = dateTime.Date.AddHours(12);
@@ -90,8 +90,8 @@ class Program
         string json = JsonSerializer.Serialize(meetings, new JsonSerializerOptions { WriteIndented = true});
         File.WriteAllText(filePath, json);
 
-        Console.WriteLine("Meeting succesfully scheduled and saved!");
-        Console.WriteLine("Press any key to return to main menu...");
+        WriteLine("Meeting succesfully scheduled and saved!");
+        WriteLine("Press any key to return to main menu...");
         ReadKey();
     }
 
@@ -108,28 +108,28 @@ class Program
 
                 if (meetings.Count == 0)
                 {
-                    Console.WriteLine("No meetings found in file, that's depressing.");
+                    WriteLine("No meetings found in file, that's depressing.");
                 }
                 else
                 {
-                    Console.WriteLine("List of scheduled meetings:");
+                    WriteLine("List of scheduled meetings:");
                     foreach (var meeting in meetings)
                     {
-                        Console.WriteLine($"Date: {meeting.DateTime.ToString("MM-dd-yyyy")}, Participants: {string.Join(", ", meeting.Participants)}");
+                        WriteLine($"Date: {meeting.DateTime.ToString("MM-dd-yyyy")}, Participants: {string.Join(", ", meeting.Participants)}");
                     }
                 }
             }
             else
             {
-                Console.WriteLine("No meetings found, yikes.");
+                WriteLine("No meetings found, yikes.");
             }
         }
         else
         {
-            Console.WriteLine("File not found.");
+            WriteLine("File not found.");
         }
 
-        Console.WriteLine("Press any key to return to the main menu...");
+        WriteLine("Press any key to return to the main menu...");
         ReadKey();
     }
 }
