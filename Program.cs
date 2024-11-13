@@ -18,7 +18,7 @@ class Program
 
             while (!exit)
             {
-                Console.Clear();
+                Clear();
                 Console.WriteLine("Main menu");
                 Console.WriteLine("1. Schedule a new meeting");
                 Console.WriteLine("2. List all meetings");
@@ -52,7 +52,7 @@ class Program
 
     static void ScheduleNewMeeting(string filePath)
     {
-        Console.Clear();
+        Clear();
 
         List<Meeting> meetings = new List<Meeting>();
 
@@ -97,7 +97,7 @@ class Program
 
     static void ListAllMeetings(string filePath)
     {
-        Console.Clear();
+        Clear();
 
         if (File.Exists(filePath))
         {
