@@ -2,6 +2,7 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Text.Json;
+    using static system.Console;
 
 namespace Møteplanlegger_CLI_Applikasjon
 {
