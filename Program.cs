@@ -92,7 +92,7 @@ class Program
 
         Console.WriteLine("Meeting succesfully scheduled and saved!");
         Console.WriteLine("Press any key to return to main menu...");
-        Console.ReadKey();
+        ReadKey();
     }
 
     static void ListAllMeetings(string filePath)
@@ -130,7 +130,7 @@ class Program
         }
 
         Console.WriteLine("Press any key to return to the main menu...");
-        Console.ReadKey();
+        ReadKey();
     }
 }
 }
