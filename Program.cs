@@ -25,8 +25,7 @@ class Program
                 AnsiConsole.MarkUpLine("[green]2.[/] List all meetings");
                 AnsiConsole.MarkUpLine("[green]3.[/] Exit");
                 string option = AnsiConsole.Ask<string>("Choose an option: ");
-                WriteLine("3. Exit");
-                Write("Choose an option: ");
+                
 
                 switch (ReadLine())
                 {
