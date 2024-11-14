@@ -19,10 +19,12 @@ class Program
 
             while (!exit)
             {
-                Clear();
-                WriteLine("Main menu");
-                WriteLine("1. Schedule a new meeting");
-                WriteLine("2. List all meetings");
+                AnsiConsole.Clear();
+                AnsiConsole.MarkUpLine("[bold yellow]Main menu[/]");
+                AnsiConsole.MarkUpLine("[green]1.[/] Schedule a new meeting");
+                AnsiConsole.MarkUpLine("[green]2.[/] List all meetings");
+                AnsiConsole.MarkUpLine("[green]3.[/] Exit");
+                string option = AnsiConsole.Ask<string>("Choose an option: ");
                 WriteLine("3. Exit");
                 Write("Choose an option: ");
 
