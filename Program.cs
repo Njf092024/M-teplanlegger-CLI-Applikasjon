@@ -19,14 +19,15 @@ class Program
             while (!exit)
             {
                 Console.Clear();
-                AnsiConsole.MarkupLine("[bold yellow]Main menu[/]");
-                AnsiConsole.MarkupLine("[green]1.[/] Schedule a new meeting");
-                AnsiConsole.MarkupLine("[green]2.[/] List all meetings");
-                AnsiConsole.MarkupLine("[green]3.[/] Exit");
-                string option = AnsiConsole.Ask<string>("Choose an option: ");
+                var prompt = new SelectionPrompt<string>()
+                .Title("[bold yellow]Main menu[/]")
+                .PageSize(10)
+                .AddChoices("Schedule a new meeting", "List all meetings", "Exit");
+
+                var selectedOption = AnsiConsole.Prompt(prompt);
                 
 
-                switch (option)
+                switch (selectedOption)
                 {
                     case "1":
                     ScheduleNewMeeting(filePath);
