@@ -13,3 +13,10 @@ C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\refint\Møteplanlegge
 C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.pdb
 C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.genruntimeconfig.cache
 C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\ref\Møteplanlegger CLI Applikasjon.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\Spectre.Console.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\Spectre.Console.Cli.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\de\Spectre.Console.Cli.resources.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\fr\Spectre.Console.Cli.resources.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\bin\Debug\net8.0\sv\Spectre.Console.Cli.resources.dll
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\Møteplanlegger CLI Applikasjon.csproj.AssemblyReference.cache
+C:\Koding\Møteplanlegger CLI Applikasjon\obj\Debug\net8.0\M_teplan.6F9C93D6.Up2Date

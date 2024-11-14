@@ -2,7 +2,8 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Text.Json;
-    using static system.Console;
+    using static System.Console;
+    using Spectre.Console;
 
 namespace Møteplanlegger_CLI_Applikasjon
 {
