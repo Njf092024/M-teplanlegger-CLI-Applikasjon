@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Møteplanlegger CLI Applikasjon")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+768a9ac47933331ed00844686eec95d2983e23b7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d621e4e9856b5c2279aa6409b39f828b52c0fa7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Møteplanlegger CLI Applikasjon")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Møteplanlegger CLI Applikasjon")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

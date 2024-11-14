@@ -2,7 +2,6 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Text.Json;
-    using static System.Console;
     using Spectre.Console;
 
 namespace Møteplanlegger_CLI_Applikasjon
@@ -20,14 +19,14 @@ class Program
             while (!exit)
             {
                 AnsiConsole.Clear();
-                AnsiConsole.MarkUpLine("[bold yellow]Main menu[/]");
-                AnsiConsole.MarkUpLine("[green]1.[/] Schedule a new meeting");
-                AnsiConsole.MarkUpLine("[green]2.[/] List all meetings");
-                AnsiConsole.MarkUpLine("[green]3.[/] Exit");
+                AnsiConsole.MarkupLine("[bold yellow]Main menu[/]");
+                AnsiConsole.MarkupLine("[green]1.[/] Schedule a new meeting");
+                AnsiConsole.MarkupLine("[green]2.[/] List all meetings");
+                AnsiConsole.MarkupLine("[green]3.[/] Exit");
                 string option = AnsiConsole.Ask<string>("Choose an option: ");
                 
 
-                switch (ReadLine())
+                switch (option)
                 {
                     case "1":
                     ScheduleNewMeeting(filePath);
@@ -36,7 +35,7 @@ class Program
                     ListAllMeetings(filePath);
                     break;
                     case "3":
-                    Clear();
+                    AnsiConsole-Clear();
                     exit = true;
                     break;
                 }
@@ -44,17 +43,17 @@ class Program
         }
         catch (IOException exception)
         {
-            WriteLine($"An error occured while attempting to write to the file meetings.json: {exception.Message}");
+            AnsiConsole.MarkupLine("[red]An error occured while attempting to write to the file meetings.json: {0}[/]", exception.Message);
         }
         catch (Exception exception)
         {
-            WriteLine($" An error occured: {exception.Message}\n");
+            AnsiConsole.MarkupLine("[red]An error occured: {0}[/]", exception.Message);
         }
     }
 
     static void ScheduleNewMeeting(string filePath)
     {
-        Clear();
+        AnsiConsole.Clear();
 
         List<Meeting> meetings = new List<Meeting>();
 
@@ -67,17 +66,17 @@ class Program
             }
         }
 
-        WriteLine("Enter the names of participants, seperated by commas:");
-        string? input = ReadLine();
+        AnsiConsole.MarkupLine("Enter the names of participants, seperated by commas:");
+        string? input = AnsiConsole.Ask<string>("Participants: ");
         List<string> participants = new List<string>(input?.Split(',') ?? Array.Empty<string>());
 
-        WriteLine("Enter the meeting time (MM-dd):");
-        string? dateTimeInput = ReadLine();
+        AnsiConsole.MarkupLine("Enter the meeting time (MM-dd):");
+        string? dateTimeInput = AnsiConsole.Ask<string>("Date (MM-dd)");
         DateTime dateTime;
         while (!DateTime.TryParse(dateTimeInput + " " +DateTime.Now.Year, out dateTime))
         {
-            WriteLine("Incorrect date. Please try again (MM-dd):");
-            dateTimeInput = ReadLine();
+            AnsiConsole.MarkupLine("[red]Incorrect date. Please try again (MM-dd):[/]");
+            dateTimeInput = AnsiConsole.Ask<string>("Date (MM-dd): ");
         }
 
         dateTime = dateTime.Date.AddHours(12);
@@ -92,14 +91,14 @@ class Program
         string json = JsonSerializer.Serialize(meetings, new JsonSerializerOptions { WriteIndented = true});
         File.WriteAllText(filePath, json);
 
-        WriteLine("Meeting succesfully scheduled and saved!");
-        WriteLine("Press any key to return to main menu...");
-        ReadKey();
+        AnsiConsole.MarkupLine("[green]Meeting succesfully scheduled and saved![/]");
+        AnsiConsole.MarkupLine("Press any key to return to main menu...");
+        AnsiConsole.WaitForKey();
     }
 
     static void ListAllMeetings(string filePath)
     {
-        Clear();
+        AnsiConsole.Clear();
 
         if (File.Exists(filePath))
         {
@@ -110,29 +109,29 @@ class Program
 
                 if (meetings.Count == 0)
                 {
-                    WriteLine("No meetings found in file, that's depressing.");
+                    AnsiConsole.MarkupLine("[yellow]No meetings found in file, that's depressing.[/]");
                 }
                 else
                 {
-                    WriteLine("List of scheduled meetings:");
+                    AnsiConsole.MarkupLine("[green]List of scheduled meetings:[/]");
                     foreach (var meeting in meetings)
                     {
-                        WriteLine($"Date: {meeting.DateTime.ToString("MM-dd-yyyy")}, Participants: {string.Join(", ", meeting.Participants)}");
+                        AnsiConsole.MarkupLine($"[cyan]Date:[/] {meeting.DateTime.ToString("MM-dd-yyyy")},  [cyan]Participants:[/] {string.Join(", ", meeting.Participants)}");
                     }
                 }
             }
             else
             {
-                WriteLine("No meetings found, yikes.");
+                AnsiConsole.MarkupLine("[yellow]No meetings found, yikes.[/]");
             }
         }
         else
         {
-            WriteLine("File not found.");
+            AnsiConsole.MarkupLine("[red]File not found.[/]");
         }
 
-        WriteLine("Press any key to return to the main menu...");
-        ReadKey();
+        AnsiConsole.MarkupLine("Press any key to return to the main menu...");
+        AnsiConsole.WaitForKey();
     }
 }
 }
