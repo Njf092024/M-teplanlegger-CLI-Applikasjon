@@ -29,13 +29,13 @@ class Program
 
                 switch (selectedOption)
                 {
-                    case "1":
+                    case "Schedule a new meeting":
                     ScheduleNewMeeting(filePath);
                     break;
-                    case "2":
+                    case "List all meetings":
                     ListAllMeetings(filePath);
                     break;
-                    case "3":
+                    case "Exit":
                     Console.Clear();
                     exit = true;
                     break;
