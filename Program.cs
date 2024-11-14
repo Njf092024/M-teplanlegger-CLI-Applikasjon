@@ -18,7 +18,7 @@ class Program
 
             while (!exit)
             {
-                AnsiConsole.WaitForKey();
+                Console.Clear();
                 AnsiConsole.MarkupLine("[bold yellow]Main menu[/]");
                 AnsiConsole.MarkupLine("[green]1.[/] Schedule a new meeting");
                 AnsiConsole.MarkupLine("[green]2.[/] List all meetings");
@@ -35,7 +35,7 @@ class Program
                     ListAllMeetings(filePath);
                     break;
                     case "3":
-                    AnsiConsole-WaitForKey();
+                    Console.Clear();
                     exit = true;
                     break;
                 }
@@ -53,7 +53,7 @@ class Program
 
     static void ScheduleNewMeeting(string filePath)
     {
-        AnsiConsole.WaitForKey();
+        Console.Clear();
 
         List<Meeting> meetings = new List<Meeting>();
 
@@ -93,12 +93,12 @@ class Program
 
         AnsiConsole.MarkupLine("[green]Meeting succesfully scheduled and saved![/]");
         AnsiConsole.MarkupLine("Press any key to return to main menu...");
-        AnsiConsole.WaitForKey();
+        Console.Clear();
     }
 
     static void ListAllMeetings(string filePath)
     {
-        AnsiConsole.WaitForKey();
+        Console.Clear();
 
         if (File.Exists(filePath))
         {
@@ -131,7 +131,7 @@ class Program
         }
 
         AnsiConsole.MarkupLine("Press any key to return to the main menu...");
-        AnsiConsole.WaitForKey();
+        Console.Clear();
     }
 }
 }
